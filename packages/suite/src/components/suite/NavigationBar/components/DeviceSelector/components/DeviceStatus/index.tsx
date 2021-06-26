@@ -34,14 +34,8 @@ const StatusText = styled.div<{ show: boolean; status: Status }>`
     text-transform: uppercase;
     font-weight: ${variables.FONT_WEIGHT.DEMI_BOLD};
     font-size: ${variables.FONT_SIZE.TINY};
-    top: 14px;
+    top: 12px;
     color: ${props => getStatusColor(props.status, props.theme)};
-    background: linear-gradient(
-        90deg,
-        ${props => `${props.theme.BG_LIGHT_GREY}00`} 0%,
-        ${props => props.theme.BG_LIGHT_GREY} 20px,
-        ${props => props.theme.BG_LIGHT_GREY} 100%
-    );
 
     padding-left: 24px;
     opacity: ${props => (props.show ? 1 : 0)};
