@@ -111,13 +111,13 @@ const DeviceSelector = (
             }
             triggerAnim={triggerAnim}
             isMobileLayout={props.isMobileLayout}
-            className="focus:ring-brand relative flex items-center p-2 mx-4 transition bg-white rounded-md cursor-pointer lg:shadow-sm lg:border lg:border-gray-200 lg:mt-6 hover:bg-gray-50 min-w-[160px]"
+            className="relative flex items-center p-2 transition rounded-md cursor-pointer focus:ring-brand md:shadow-sm md:border md:border-gray-200 md:mt-6 hover:bg-gray-50 md:dark:bg-white/5 md:dark:border-white/5"
             {...props}
         >
             {selectedDevice && (
                 <>
                     <DeviceImageWrapper
-                        className="w-[22px] bg-my px-px"
+                        className="w-[22px] bg-my px-px md:translate-x-2 lg:transform-none"
                         lowerOpacity={deviceNeedsRefresh}
                     >
                         <DeviceImage
@@ -126,13 +126,13 @@ const DeviceSelector = (
                         />
                     </DeviceImageWrapper>
                     {/* Details */}
-                    <div className="flex flex-col flex-1 pl-3 overflow-hidden self-baseline">
+                    <div className="flex flex-col flex-1 pl-3 overflow-hidden md:hidden lg:flex self-baseline">
                         {/* Wallet Brand */}
-                        <div className="min-w-0 font-medium text-gray-900 truncate">
+                        <div className="min-w-0 font-medium text-gray-900 truncate dark:text-white/90">
                             {selectedDevice.label}
                         </div>
                         {/* Wallet Name */}
-                        <div className="min-w-0 text-xs font-medium text-gray-500 truncate mt-0.5">
+                        <div className="min-w-0 text-xs font-medium text-gray-500 truncate mt-0.5 dark:text-white/50">
                             {selectedDevice.metadata.status === 'enabled' &&
                             selectedDevice.metadata.walletLabel ? (
                                 selectedDevice.metadata.walletLabel

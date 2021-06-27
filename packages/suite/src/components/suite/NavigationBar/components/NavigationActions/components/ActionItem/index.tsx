@@ -51,7 +51,11 @@ const ActionItem = React.forwardRef((props: Props) => {
         <Icon
             size={24}
             icon={props.icon}
-            className={classNames(props.isActive ? 'text-gray-500' : 'text-gray-400')}
+            className={classNames(
+                props.isActive
+                    ? 'text-gray-500 dark:text-white/80'
+                    : 'text-gray-400 dark:text-white/40',
+            )}
         />
     ) : (
         props.iconComponent
@@ -62,12 +66,12 @@ const ActionItem = React.forwardRef((props: Props) => {
             className={classNames(
                 'relative flex items-center p-2 transition rounded-md cursor-pointer',
                 props.isActive
-                    ? 'text-gray-900 bg-gray-100'
-                    : 'hover:bg-gray-50 text-gray-600 hover:text-gray-900',
+                    ? 'text-gray-900 bg-gray-100 dark:text-white/90 dark:bg-white/10'
+                    : 'hover:bg-gray-50 text-gray-600 hover:text-gray-900 dark:hover:bg-white/5 dark:hover:text-white/90 dark:text-white/50',
             )}
             {...props}
         >
-            <IconWrapper className="relative mr-3" isActive={props.isActive}>
+            <IconWrapper className="relative md:p-2 lg:p-0" isActive={props.isActive}>
                 {iconComponent}
                 {props.withAlertDot && (
                     <AlertDotWrapper>
@@ -75,7 +79,7 @@ const ActionItem = React.forwardRef((props: Props) => {
                     </AlertDotWrapper>
                 )}
             </IconWrapper>
-            <div className="flex items-center flex-1 font-medium translate-y-px lg:text-sm">
+            <div className="flex items-center flex-1 ml-3 font-medium translate-y-px md:hidden lg:flex lg:text-sm">
                 {props.label}
             </div>
         </Wrapper>

@@ -92,7 +92,7 @@ const NavigationActions = (props: Props) => {
     const unseenNotifications = useMemo(() => notifications.some(n => !n.seen), [notifications]);
 
     return (
-        <nav className="flex flex-col flex-1 px-4 mt-6" aira-label="Sidebar">
+        <nav className="flex flex-col flex-1 mt-6" aira-label="Sidebar">
             <div className="space-y-1">
                 {MAIN_MENU_ITEMS.map(item => {
                     const { route, translationId, isDisabled, isBeta, icon } = item;

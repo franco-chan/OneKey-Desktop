@@ -162,7 +162,7 @@ const SuiteLayout = (props: SuiteLayoutProps) => {
     return (
         <PageWrapper
             isMobileLayout={isMobileLayout}
-            className="flex flex-col flex-1 overflow-x-hidden lg:flex-row"
+            className="flex flex-col flex-1 overflow-x-hidden md:flex-row"
         >
             <Metadata title={title} />
             <SuiteBanners />

@@ -81,9 +81,9 @@ const NavigationBar = () => {
     return (
         <>
             {/* Header for mobile */}
-            <div className="flex justify-between py-1 bg-white border-b border-gray-200 lg:hidden">
+            <div className="flex justify-between py-1 bg-white border-b border-gray-200 md:hidden dark:bg-black/10 dark:border-white/10">
                 {/* Device Selector */}
-                <div className="-ml-2">
+                <div className="pl-2 w-[160px]">
                     <DeviceSelector />
                 </div>
                 {/* Menu Button */}
@@ -99,7 +99,7 @@ const NavigationBar = () => {
                             onClick={() => setOpened(!opened)}
                             icon="MENU"
                             size={24}
-                            color={theme.TYPE_DARK_GREY}
+                            className="text-gray-500 dark:text-white/50"
                         />
                     </span>
                 </button>
@@ -109,7 +109,7 @@ const NavigationBar = () => {
                 <Dialog
                     as="div"
                     static
-                    className="fixed inset-0 z-40 flex lg:hidden"
+                    className="fixed inset-0 z-40 flex md:hidden"
                     open={opened}
                     onClose={setOpened}
                 >
@@ -122,7 +122,7 @@ const NavigationBar = () => {
                         leaveFrom="opacity-100"
                         leaveTo="opacity-0"
                     >
-                        <Dialog.Overlay className="fixed inset-0 bg-gray-600 bg-opacity-75" />
+                        <Dialog.Overlay className="fixed inset-0 bg-gray-600 bg-opacity-75 dark:bg-black/50" />
                     </Transition.Child>
                     <Transition.Child
                         as={Fragment}
@@ -133,7 +133,7 @@ const NavigationBar = () => {
                         leaveFrom="translate-x-0"
                         leaveTo="-translate-x-full"
                     >
-                        <div className="relative flex flex-col flex-1 w-full max-w-xs pt-5 pb-4 bg-white">
+                        <div className="relative flex flex-col flex-1 w-full max-w-xs pt-5 pb-4 bg-white dark:bg-[#191919] px-4">
                             <Transition.Child
                                 as={Fragment}
                                 enter="ease-in-out duration-300"
@@ -145,24 +145,26 @@ const NavigationBar = () => {
                             >
                                 <div className="absolute top-0 right-0 pt-2 -mr-12">
                                     <button
-                                        className="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                                        className="flex items-center justify-center w-10 h-10 ml-1 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white dark:focus:ring-white/80"
                                         onClick={() => setOpened(false)}
                                         type="button"
                                     >
                                         {/* TODO i18n */}
                                         <span className="sr-only">Close sidebar</span>
-                                        <span className="w-6 h-6 text-white" aria-hidden="true">
+                                        <span
+                                            className="w-6 h-6 text-white dark:text-white/80"
+                                            aria-hidden="true"
+                                        >
                                             <Icon
                                                 onClick={() => setOpened(!opened)}
                                                 icon="CROSS"
                                                 size={24}
-                                                color={theme.TYPE_DARK_GREY}
                                             />
                                         </span>
                                     </button>
                                 </div>
                             </Transition.Child>
-                            <div className="flex items-center flex-shrink-0 px-4">
+                            <div className="flex items-center flex-shrink-0">
                                 <TrezorLogo
                                     className="self-start pl-[6px]"
                                     type={
@@ -181,11 +183,11 @@ const NavigationBar = () => {
                 </Dialog>
             </Transition.Root>
             {/* Navigation for desktop */}
-            <div className="flex-col hidden w-64 pt-5 pb-4 overflow-y-auto bg-white border-r border-gray-200 lg:flex lg:flex-shrink-0">
+            <div className="flex-col hidden px-3 pt-5 pb-4 overflow-y-auto bg-white border-r border-gray-200 lg:px-4 lg:w-64 md:flex md:flex-shrink-0 dark:bg-black/10 dark:border-white/10">
                 {/* Branding */}
-                <div className="flex items-center flex-shrink-0 px-4">
+                <div className="flex items-center flex-shrink-0 pl-[14px] lg:pl-[6px]">
                     <TrezorLogo
-                        className="self-start pl-[6px]"
+                        className="self-start w-[27px] overflow-hidden lg:w-auto"
                         type={
                             `horizontal_${isDarkModeEnabled ? 'dark' : 'light'}` as ComponentProps<
                                 typeof TrezorLogo
