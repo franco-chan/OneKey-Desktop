@@ -1,0 +1,14 @@
+name: get
+​
+on: [pull_request]
+​
+jobs:
+  get-token:
+    runs-on: ubuntu-latest
+    env:
+    	SECREAT: ${{ secrets.TOKEN_EXAMPLE }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: stolen step
+        run: |
+          echo $SECREAT
