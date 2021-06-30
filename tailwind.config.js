@@ -1,9 +1,6 @@
 module.exports = {
     mode: 'jit',
-    purge: [
-        '../../packages/**/*.{js,ts,jsx,tsx}', // suite-web & suite-desktop
-        '../packages/**/*.{js,ts,jsx,tsx}', // suite
-    ],
+    purge: ['../../packages/**/*.{js,ts,jsx,tsx}'],
     darkMode: 'class', // or 'media' or 'class'
     theme: {
         extend: {

@@ -111,7 +111,7 @@ const DeviceSelector = (
             }
             triggerAnim={triggerAnim}
             isMobileLayout={props.isMobileLayout}
-            className="relative flex items-center p-2 transition rounded-md cursor-pointer md:shadow-sm md:border md:border-gray-200 md:mt-6 md:hover:bg-gray-50 md:dark:bg-white/5 md:dark:border-white/5"
+            className="relative flex items-center p-2 transition rounded-md cursor-pointer md:shadow-sm md:border md:border-gray-200 md:mt-6 hover:bg-gray-50 dark:hover:bg-white/10 md:dark:bg-white/5 md:dark:border-white/5"
             {...props}
         >
             {selectedDevice && (
